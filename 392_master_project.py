@@ -3,9 +3,24 @@
 # SECTION 1 ===================================================
 
 ##open file for reading
+##create try-except fields to catch errors such as:
+##file not present, wrong data format, file too big, etc.
 
-##create try-except fields to catch errors such as: file not present, wrong data format, file too big, etc.
 
+def main():
+
+    try:
+        
+        records_file = open('RECORD_NAME.TXT', 'r')
+        file_contents = records_file.read()
+        records_file.close()
+
+    except IOError:
+        print('An error occured trying to read the file.)
+    except FileNotFoundError:
+        print('The file was not found.)
+    except:
+        print('Error has occurred.')
 
 # SECTION 2 ===================================================
 
